@@ -2,7 +2,7 @@
 
 This is a basic ToDo List built with MongoDB.
 
-- [ ] Project Setup 
+- [X] Project Setup 
     - git init
     - npm init 
     - Structure/standard files (readme, .gitignore, folder structure, basic express)
