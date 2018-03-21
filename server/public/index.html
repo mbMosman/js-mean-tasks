@@ -6,12 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ToDo List</title>
   <link rel="stylesheet" href="style.css">
+  <script src="vendors/angular/angular.min.js"></script>
   <script src="client.js"></script>
 </head>
-<body>
+<body ng-app="ToDoApp">
   <header><h1>ToDo List</h1></header>
   <main>
-    
+    <section ng-controller="ToDoController as vm">
+      <h2>All Tasks</h2>
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="task in vm.display.tasks">
+            <td>{{task.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </main>
 </body>
 </html>

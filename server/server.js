@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 // MONGODB CODE - END
 
 // Routers
-// const mopedRouter = require('./routes/moped.router');
-// app.use('/moped', mopedRouter);
+const taskRouter = require('./routes/task.router');
+app.use('/tasks', taskRouter);
 
 // Start Server
 const port = 5000;

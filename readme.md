@@ -7,7 +7,7 @@ This is a basic ToDo List built with MongoDB.
     - npm init 
     - Structure/standard files (readme, .gitignore, folder structure, basic express)
     - update package.json
-- [ ] HTML/CSS/JS for main page
+- [X] HTML/CSS/JS for main page
     - Sourcing everything properly
     - Serve static files
     - Angular app setup
