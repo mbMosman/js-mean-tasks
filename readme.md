@@ -21,7 +21,7 @@ This is a basic ToDo List built with MongoDB.
     - Added to array
     - Page task list is refreshed after add
     - Input fields cleared on successful add
-- [ ] Store tasks in database
+- [X] Store tasks in database
     - Setup Mongoose Schema for Task
     - Update GET & POST routes to use DB
     - Remove the array

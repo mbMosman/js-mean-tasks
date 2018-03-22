@@ -1,21 +1,32 @@
 const express = require( 'express' );
 const router = express.Router();
 
-const taskList = [
-  {name: 'Groceries', completed: false },
-  {name: 'Laundry', completed: true }
-];
+const Task = require('../modules/task');
+
 
 router.get('/', (req, res) => {
   console.log('Getting tasks...');
-  res.send(taskList);
+  Task.find( {}, (error, taskList) => {
+    if (error){
+      console.log('error getting tasks:', error);
+      response.sendStatus(500);
+    } else {
+      res.send(taskList);
+    }
+  });
 });
 
 router.post( '/', ( req, res ) => {
-  const task = req.body.newTask;
-  console.log('Adding a task', task)
-  taskList.push(task);
-  res.sendStatus(201);
+  const task = new Task(req.body.newTask);
+  console.log('Adding a task', task);
+  task.save( (error, result) => {
+    if (error){
+      console.log('error adding task:', error);
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(201);
+    }
+  });
 });
 
 module.exports = router;
