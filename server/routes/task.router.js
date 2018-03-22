@@ -29,4 +29,20 @@ router.post( '/', ( req, res ) => {
   });
 });
 
+router.put('/complete/:id', (request, response) => {
+  const id = request.params.id;
+  Task.findByIdAndUpdate(
+    {"_id": id} ,
+    {$set: {completed: true} },
+    (error, result) => {
+      if (error){
+        console.log('error task completion:', error);
+        response.sendStatus(500);
+      } else {
+        response.sendStatus(200);
+      }
+    }
+  )
+})
+
 module.exports = router;

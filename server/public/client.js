@@ -19,8 +19,7 @@ app.controller('ToDoController', ['$http', function($http) {
   }
 
   self.addTask = function() {
-    console.log('About to add a task...');
-    console.log('Task', self.newTask);
+    console.log('Add Task', self.newTask);
     $http({
       method: 'POST',
       url: '/tasks',
@@ -30,6 +29,19 @@ app.controller('ToDoController', ['$http', function($http) {
       self.newTask.name = '';
     }).catch( (error) => {
       console.log('Error adding tasks');
+    })
+  }
+
+  self.completeTask = function(id) {
+    console.log('Complete Task with id', id);
+    $http({
+      method: 'PUT',
+      url: `/tasks/complete/${id}`
+    }).then( (response) => {
+      self.getAllTasks();
+      self.newTask.name = '';
+    }).catch( (error) => {
+      console.log('Error completing tasks');
     })
   }
 

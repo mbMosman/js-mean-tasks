@@ -25,10 +25,10 @@ This is a basic ToDo List built with MongoDB.
     - Setup Mongoose Schema for Task
     - Update GET & POST routes to use DB
     - Remove the array
-- [ ] Ability to complete a task 
+- [X] Ability to complete a task 
     - Button on UI
     - Task updated in database
-    - Display should change for completed task
+    - Hide button for completed task
 - [ ] Ability to delete a task
     - Task is removed from database
     - List is refreshed when a task is deleted

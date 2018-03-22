@@ -24,12 +24,15 @@
       <table>
         <thead>
           <tr>
-            <td>Name</td><td>Completed</td>
+            <td>Name</td><td>Status</td>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="task in vm.display.tasks">
-            <td>{{task.name}}</td><td>{{task.completed}}</td>
+            <td>{{task.name}}</td>
+            <td>
+              <span ng-show="task.completed">Completed!</span>
+              <button ng-click="vm.completeTask(task._id)" ng-show="!task.completed">Mark Complete</button></td>
           </tr>
         </tbody>
       </table>
