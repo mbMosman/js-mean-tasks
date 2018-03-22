@@ -24,7 +24,7 @@ router.post( '/', ( req, res ) => {
       console.log('error adding task:', error);
       res.sendStatus(500);
     } else {
-      res.sendStatus(201);
+      res.sendStatus(201); // Created
     }
   });
 });
@@ -39,7 +39,22 @@ router.put('/complete/:id', (request, response) => {
         console.log('error task completion:', error);
         response.sendStatus(500);
       } else {
-        response.sendStatus(200);
+        response.sendStatus(204); // OK (no content)
+      }
+    }
+  )
+})
+
+router.delete('/:id', (request, response) => {
+  const id = request.params.id;
+  Task.findByIdAndRemove(
+    {"_id": id} ,
+    (error, result) => {
+      if (error){
+        console.log('error task deletion:', error);
+        response.sendStatus(500);
+      } else {
+        response.sendStatus(204); // OK (no content)
       }
     }
   )

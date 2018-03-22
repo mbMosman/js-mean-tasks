@@ -29,7 +29,7 @@ This is a basic ToDo List built with MongoDB.
     - Button on UI
     - Task updated in database
     - Hide button for completed task
-- [ ] Ability to delete a task
+- [X] Ability to delete a task
     - Task is removed from database
     - List is refreshed when a task is deleted
 

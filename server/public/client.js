@@ -39,9 +39,20 @@ app.controller('ToDoController', ['$http', function($http) {
       url: `/tasks/complete/${id}`
     }).then( (response) => {
       self.getAllTasks();
-      self.newTask.name = '';
     }).catch( (error) => {
       console.log('Error completing tasks');
+    })
+  }
+
+  self.deleteTask = function(id) {
+    console.log('Delete Task with id', id);
+    $http({
+      method: 'DELETE',
+      url: `/tasks/${id}`
+    }).then( (response) => {
+      self.getAllTasks();;
+    }).catch( (error) => {
+      console.log('Error deleting tasks');
     })
   }
 

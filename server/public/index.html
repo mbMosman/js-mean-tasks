@@ -24,7 +24,7 @@
       <table>
         <thead>
           <tr>
-            <td>Name</td><td>Status</td>
+            <td>Name</td><td>Status</td><td>&nbsp;</td>
           </tr>
         </thead>
         <tbody>
@@ -32,7 +32,11 @@
             <td>{{task.name}}</td>
             <td>
               <span ng-show="task.completed">Completed!</span>
-              <button ng-click="vm.completeTask(task._id)" ng-show="!task.completed">Mark Complete</button></td>
+              <button ng-click="vm.completeTask(task._id)" ng-show="!task.completed">Mark Complete</button>
+            </td>
+            <td>
+              <button ng-click="vm.deleteTask(task._id)">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>
