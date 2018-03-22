@@ -11,15 +11,16 @@ This is a basic ToDo List built with MongoDB.
     - Sourcing everything properly
     - Serve static files
     - Angular app setup
-- [ ] Ability to see all tasks
+- [X] Ability to see all tasks
     - Server route for GET
     - Dummy tasks in an array
     - Page shows all tasks
-- [ ] Ability to add a task
+- [X] Ability to add a task
     - Page has form for user to create a task
     - Server route for POST
     - Added to array
     - Page task list is refreshed after add
+    - Input fields cleared on successful add
 - [ ] Store tasks in database
     - Setup Mongoose Schema for Task
     - Update GET & POST routes to use DB
