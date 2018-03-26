@@ -34,6 +34,6 @@ This is a basic ToDo List built with MongoDB.
     - List is refreshed when a task is deleted
 
 Nice to have's:
-- [ ] - Icons! 
-- [ ] - Spiffy Font
+- [X] - Icons! 
+- [X] - Spiffy Font
 - [ ] - Stying w/ Angular Material

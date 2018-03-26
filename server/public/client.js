@@ -32,16 +32,19 @@ app.controller('ToDoController', ['$http', function($http) {
     })
   }
 
-  self.completeTask = function(id) {
-    console.log('Complete Task with id', id);
-    $http({
-      method: 'PUT',
-      url: `/tasks/complete/${id}`
-    }).then( (response) => {
-      self.getAllTasks();
-    }).catch( (error) => {
-      console.log('Error completing tasks');
-    })
+  self.completeTask = function(task) {
+    if (!task.completed) {
+      const id  = task._id;
+      console.log('Complete Task with id', id);
+      $http({
+        method: 'PUT',
+        url: `/tasks/complete/${id}`
+      }).then( (response) => {
+        self.getAllTasks();
+      }).catch( (error) => {
+        console.log('Error completing tasks');
+      })
+    }
   }
 
   self.deleteTask = function(id) {

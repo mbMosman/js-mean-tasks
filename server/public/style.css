@@ -1,3 +1,68 @@
 body {
-  background-color: pink
+  background-color: #333;
+  color: #333333;
+  font-family: 'Acme', sans-serif;
+  margin: 0;
+}
+
+main {
+  background-color: #F48FB1;
+  padding: 2em;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+header {
+  background-color: #880E4F;
+  color: #FFF;
+  text-align: center;
+  padding: 1em;
+}
+
+h1 {
+  margin: 0;
+}
+
+input {
+  display: inline-block;
+  width: 90%;
+  padding: 0.2em;
+  font-size: 1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  padding: 1em;
+  border-bottom: 1px solid #666666;
+  background-color: #AD1457;
+  color: #ececec;
+}
+
+i.fas, i.far {
+  margin: 0.25em;
+}
+
+.list {
+  max-width: 400px; 
+}
+
+li.completed {
+  text-decoration: line-through;
+  background-color: #bbb;
+  color: #666;
+}
+
+.right {
+  float: right;
+}
+
+a:hover {
+  cursor: pointer; 
 }

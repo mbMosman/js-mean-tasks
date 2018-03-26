@@ -5,41 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ToDo List</title>
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet"> -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="vendors/fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.min.css">
+
   <script src="vendors/angular/angular.min.js"></script>
   <script src="client.js"></script>
 </head>
 <body ng-app="ToDoApp">
   <header><h1>ToDo List</h1></header>
   <main ng-controller="ToDoController as vm">
-    <section>
+    <section class="add">
       <h2>Add a Task</h2>
       <form>
         <input type="text" placeholder="Task Name" ng-model="vm.newTask.name">
-        <button ng-click="vm.addTask()">Add Task</button>
+        <a class="right" ng-click="vm.addTask()"><i aria-hidden class="fas fa-plus-circle" title="add"></i><span class="sr-only">Add Task</span></a>
       </form>
     </section>
-    <section>
+    <section class="list">
       <h2>All Tasks</h2>
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td><td>Status</td><td>&nbsp;</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="task in vm.display.tasks">
-            <td>{{task.name}}</td>
-            <td>
-              <span ng-show="task.completed">Completed!</span>
-              <button ng-click="vm.completeTask(task._id)" ng-show="!task.completed">Mark Complete</button>
-            </td>
-            <td>
-              <button ng-click="vm.deleteTask(task._id)">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <ul>
+        <li ng-repeat="task in vm.display.tasks" ng-click="" 
+            ng-class="{completed: task.completed}">
+          {{task.name}}</td>
+          <div class="right">
+            <a ng-show="!task.completed" ng-click="vm.completeTask(task)"><i aria-hidden class="fas fa-check-circle" title="complete"></i></a>
+            <a class="delete" ng-click="vm.deleteTask(task._id)"><i aria-hidden class="fas fa-trash-alt" title="delete"></i></a>
+          </div> 
+        </li>
+      </ul>
     </section>
   </main>
 </body>
